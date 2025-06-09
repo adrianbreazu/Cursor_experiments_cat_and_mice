@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #f7f9fc;
+    --primary-text: #333;
+    --game-board-bg: #e0e0e0;
+    --game-board-border: #c7c7c7;
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    --cat-color: #ffab76;
+    --mouse-color: #a7a7a7;
+    --house-color: #8c6d62;
+    --safe-color: #a5d6a7;
+    --caught-color: #ef9a9a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--primary-text);
+}
+
+.game-container {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: var(--primary-text);
+}
+
+.status-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.status-box {
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.status-box#safe-status {
+    background-color: var(--safe-color);
+}
+
+.status-box#caught-status {
+    background-color: var(--caught-color);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(40, 20px);
+    grid-template-rows: repeat(20, 20px);
+    border: 1px solid var(--game-board-border);
+    background-color: var(--game-board-bg);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.entity {
+    width: 20px;
+    height: 20px;
+    font-size: 18px; /* Adjusted for emojis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: top 0.15s linear, left 0.15s linear;
+    user-select: none;
+}
+
+.house.occupied {
+    background-color: #fffacd; /* LemonChiffon, a nice light-on color */
+    border-radius: 50%;
+    box-shadow: 0 0 12px 4px #fffacd;
+}
+
+/* No background colors needed if using emojis */
+
+#reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50; /* A nice green */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
+
+#game-over-message {
+    margin-top: 25px;
+    font-size: 1.5em;
+    color: green;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+} 
